@@ -39,7 +39,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     sudo pip3 install pandas
     sudo pip3 install matplotlib
     sudo pip3 install notebook
-    sudo -su vagrant screen -dmS python-notebook bash -c "jupyter notebook --no-browser --ip=0.0.0.0 --port=8888 --port-retries=0" && echo "Jupyter Notebook has been started"
+    sudo pip3 install widgetsnbextension
+    sudo pip3 install ipywidgets
+    sudo -su vagrant screen -dmS notebook bash -c "cd /vagrant && jupyter notebook --no-browser --ip=0.0.0.0 --port=8888 --port-retries=0" && echo "Jupyter Notebook has been started"
+    pwd
   SHELL
 
   # use graphical programs
